@@ -1,3 +1,7 @@
+def pa():
+    again = input('Play again? yes or no: ').lower()
+    if again.strip() == 'yes':
+        hangman()
 def hangman():
     import random
 
@@ -14,6 +18,7 @@ def hangman():
     while tries > 0:
         if set(random_choice) == r_tried:
             print(f'Congrats the word is found: {random_choice}')
+            pa()
             break
         else:
             inp = str(input('Enter a letter: ')).lower()
@@ -39,5 +44,5 @@ def hangman():
                 print('One letter only')
     else:
         print(f'Sorry you lost, the word was {random_choice.upper()}')
-hangman()
-                
+        pa()
+hangman()     
